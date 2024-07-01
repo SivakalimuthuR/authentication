@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from main_app import views as main_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('', include('users.urls')),  # Replace 'your_main_app' with the name of your main app
+    path('', main_views.home, name='home'),  # Replace 'your_main_app' with the name of your main app
 ]
 
